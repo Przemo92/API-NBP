@@ -16,20 +16,20 @@ class Currency
     private $id;
 
     #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    private string $name;
 
     #[ORM\Column(length: 255)]
-    private ?string $currencyCode = null;
+    private string $currencyCode;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
-    private ?string $exchangeRate = null;
+    private string $exchangeRate;
 
     public function getId()
     {
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -41,7 +41,7 @@ class Currency
         return $this;
     }
 
-    public function getCurrencyCode(): ?string
+    public function getCurrencyCode(): string
     {
         return $this->currencyCode;
     }
@@ -53,7 +53,7 @@ class Currency
         return $this;
     }
 
-    public function getExchangeRate(): ?string
+    public function getExchangeRate(): string
     {
         return $this->exchangeRate;
     }

@@ -39,4 +39,13 @@ class CurrencyRepository extends ServiceEntityRepository
         }
     }
 
+    public function store($entity)
+    {
+        $this->getEntityManager()->persist($entity);
+    }
+
+    public function saveEntities()
+    {
+        $this->getEntityManager()->flush();
+    }
 }
